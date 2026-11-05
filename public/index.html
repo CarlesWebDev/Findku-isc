@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FindKu — Lost & Found Kampus</title>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="/" aria-label="FindKu" style="display: flex; align-items: center;">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 132 32" width="132" height="32" fill="none">
+            <path d="M4 6H18V9.2H7.6V14.5H16.5V17.7H7.6V26H4V6Z" fill="#1B1B1B"/>
+            <rect x="22" y="12" width="3.4" height="14" fill="#1B1B1B"/>
+            <circle cx="23.7" cy="7.5" r="2.2" stroke="#1F4D3A" stroke-width="2" fill="none"/>
+            <path d="M30 12H33.2V14C34.2 12.5 35.8 11.7 37.8 11.7C41.2 11.7 43.2 13.8 43.2 17.3V26H39.8V17.9C39.8 15.7 38.6 14.5 36.7 14.5C34.7 14.5 33.4 15.9 33.4 18.1V26H30V12Z" fill="#1B1B1B"/>
+            <path d="M60.4 6V26H57.2V23.9C56.1 25.4 54.4 26.3 52.3 26.3C48.4 26.3 45.8 23.3 45.8 19C45.8 14.7 48.4 11.7 52.3 11.7C54.3 11.7 56 12.5 57 14V6H60.4ZM53.1 23.5C55.6 23.5 57.1 21.6 57.1 19C57.1 16.4 55.6 14.5 53.1 14.5C50.6 14.5 49.2 16.4 49.2 19C49.2 21.6 50.6 23.5 53.1 23.5Z" fill="#1B1B1B"/>
+            <path d="M66 6H69.6V15.2L78.2 6H82.6L74.8 14.3L83.2 26H78.9L72.3 16.8L69.6 19.6V26H66V6Z" fill="#1F4D3A"/>
+            <path d="M98.2 26H95V24C94 25.5 92.4 26.3 90.4 26.3C87 26.3 85 24.2 85 20.7V12H88.4V20.1C88.4 22.3 89.6 23.5 91.5 23.5C93.5 23.5 94.8 22.1 94.8 19.9V12H98.2V26Z" fill="#1F4D3A"/>
+          </svg>
+        </a>
+        <a href="/form.html" class="btn btn-primary">Lapor Barang</a>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="intro-panel" aria-label="Informasi Layanan">
+        <div class="intro-content">
+          <span class="mono-tag">PAPAN INFORMASI TERPUSAT • LINGKUNGAN KAMPUS</span>
+          <h1 class="intro-title">Daftar Laporan Barang Hilang & Ditemukan</h1>
+          <p class="intro-desc">
+            Cari barangmu yang hilang, atau laporkan barang yang kamu temukan di kampus.
+          </p>
+        </div>
+        <div class="intro-stats">
+          <div class="stat-box" title="Laporan barang hilang yang belum ketemu">
+            <span class="mono-tag">MASIH DICARI</span>
+            <strong id="statHilang" class="stat-num stat-hilang">0</strong>
+          </div>
+          <div class="stat-box" title="Laporan barang temuan yang belum diambil pemiliknya">
+            <span class="mono-tag">BELUM DIAMBIL</span>
+            <strong id="statDitemukan" class="stat-num stat-ditemukan">0</strong>
+          </div>
+          <div class="stat-box" title="Laporan yang sudah selesai">
+            <span class="mono-tag">SELESAI</span>
+            <strong id="statSelesai" class="stat-num stat-selesai">0</strong>
+          </div>
+        </div>
+      </section>
+
+      <section class="filter-bar" aria-label="Pencarian dan Filter">
+        <input
+          type="search"
+          id="searchInput"
+          class="input"
+          placeholder="Cari berdasarkan nama barang..."
+          aria-label="Cari nama barang"
+        />
+        <select id="kategoriFilter" class="select" aria-label="Filter Kategori">
+          <option value="">Semua Kategori</option>
+          <option value="Dompet">Dompet</option>
+          <option value="HP">HP</option>
+          <option value="Kunci">Kunci</option>
+          <option value="Kartu">Kartu</option>
+          <option value="Tas">Tas</option>
+          <option value="Lainnya">Lainnya</option>
+        </select>
+        <select id="tipeFilter" class="select" aria-label="Filter Tipe">
+          <option value="">Tipe: Semua</option>
+          <option value="hilang">Tipe: Hilang</option>
+          <option value="ditemukan">Tipe: Ditemukan</option>
+          <option value="dikembalikan">Tipe: Sudah Dikembalikan</option>
+        </select>
+        <select id="statusFilter" class="select" aria-label="Filter Status">
+          <option value="">Status: Semua</option>
+          <option value="aktif">Status: Masih aktif</option>
+          <option value="selesai">Status: Selesai</option>
+        </select>
+      </section>
+
+      <section id="itemsGrid" class="items-grid"></section>
+    </main>
+
+    <script src="/js/app.js"></script>
+  </body>
+</html>
